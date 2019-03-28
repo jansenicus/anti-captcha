@@ -4,3 +4,4 @@ sklearn=0.20.2
 tensorflow=1.8.0
 keras=2.2.4
 opencv=4.0.0
+pickle
