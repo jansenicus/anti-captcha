@@ -11,7 +11,7 @@ from keras.layers.core import Flatten, Dense
 from helpers import resize_to_fit
 
 
-LETTER_IMAGES_FOLDER = "extracted_letter_images"
+LETTER_IMAGES_FOLDER = "extracted_images"
 MODEL_FILENAME = "captcha_model.hdf5"
 MODEL_LABELS_FILENAME = "model_labels.dat"
 
