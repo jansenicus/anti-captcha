@@ -1,1 +1,3 @@
 https://mathieularose.com/decoding-captchas/
+TODO
+img conversion
