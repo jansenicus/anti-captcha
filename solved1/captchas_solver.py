@@ -10,7 +10,7 @@ import pickle
 
 MODEL_FILENAME = "captcha_model.hdf5"
 MODEL_LABELS_FILENAME = "model_labels.dat"
-CAPTCHA_IMAGE_FOLDER = "generated_captcha_images"
+CAPTCHA_IMAGE_FOLDER = "captcha_images"
 
 
 # Load up the model labels (so we can translate model predictions to actual letters)
