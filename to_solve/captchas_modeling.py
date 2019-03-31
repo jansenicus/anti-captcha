@@ -11,7 +11,7 @@ from keras.layers.core import Flatten, Dense
 from helpers import resize_to_fit
 
 
-LETTER_IMAGES_FOLDER = "extracted_letter_images"
+LETTER_IMAGES_FOLDER = "extracted_images"
 MODEL_FILENAME = "captcha_model.hdf5"
 MODEL_LABELS_FILENAME = "model_labels.dat"
 
@@ -23,6 +23,7 @@ labels = []
 # loop over the input images
 for image_file in paths.list_images(LETTER_IMAGES_FOLDER):
     # Load the image and convert it to grayscale
+    print(image_file)
     image = cv2.imread(image_file)
     image = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
 
@@ -73,7 +74,7 @@ model.add(Flatten())
 model.add(Dense(500, activation="relu"))
 
 # Output layer with 32 nodes (one for each possible letter/number we predict)
-model.add(Dense(32, activation="softmax"))
+model.add(Dense(20, activation="softmax"))
 
 # Ask Keras to build the TensorFlow model behind the scenes
 model.compile(loss="categorical_crossentropy", optimizer="adam", metrics=["accuracy"])

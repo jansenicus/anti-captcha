@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 conda install keras
 conda install tensorflow=1.8.0
 conda install scikit-learn

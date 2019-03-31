@@ -5,7 +5,7 @@ import glob
 import imutils
 
 
-CAPTCHA_IMAGE_FOLDER = "captcha_images"
+CAPTCHA_IMAGE_FOLDER = "converted_images"
 OUTPUT_FOLDER = "extracted_images"
 
 
