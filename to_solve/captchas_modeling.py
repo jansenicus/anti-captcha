@@ -74,13 +74,13 @@ model.add(Flatten())
 model.add(Dense(500, activation="relu"))
 
 # Output layer with 32 nodes (one for each possible letter/number we predict)
-model.add(Dense(20, activation="softmax"))
+model.add(Dense(19, activation="softmax"))
 
 # Ask Keras to build the TensorFlow model behind the scenes
 model.compile(loss="categorical_crossentropy", optimizer="adam", metrics=["accuracy"])
 
 # Train the neural network
-model.fit(X_train, Y_train, validation_data=(X_test, Y_test), batch_size=32, epochs=10, verbose=1)
+model.fit(X_train, Y_train, validation_data=(X_test, Y_test), batch_size=1, epochs=10, verbose=1)
 
 # Save the trained model to disk
 model.save(MODEL_FILENAME)

@@ -24,3 +24,5 @@ for (i, captcha_image_file) in enumerate(captcha_image_files):
     # write the letter image to a file
     subprocess.call(['convert', captcha_image_file, '-colorspace', 'gray', save_path])
     subprocess.call(['convert', save_path, '-colorspace', 'gray', '-threshold','50%', save_path])
+    subprocess.call(['convert', save_path, '-colorspace', 'gray', '-threshold','50%', save_path])
+    subprocess.call(['convert', save_path, '-resize','200%', save_path])

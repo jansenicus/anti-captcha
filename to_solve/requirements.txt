@@ -1,0 +1,3 @@
+apt install imagemagick
+apt install tesseract-ocr libtesseract-dev libleptonica-dev
+pip install tesserocr
