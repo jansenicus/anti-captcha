@@ -11,6 +11,8 @@ OUTPUT_FOLDER = "converted_images"
 # Get a list of all the captcha images we need to process
 captcha_image_files = glob.glob(os.path.join(CAPTCHA_IMAGE_FOLDER, "*"))
 counts = {}
+msgWrong = ''; msgCorrect = '';
+cntWrong = 0; cntCorrect = 0;
 
 # loop over the image paths
 for (i, captcha_image_file) in enumerate(captcha_image_files):
@@ -28,8 +30,17 @@ for (i, captcha_image_file) in enumerate(captcha_image_files):
     tesseract_config = '--psm 8 --oem 0 -c tessedit_char_whitelist=abcdefghijklkmnopqrstuvwxyz01456789 --user-words wordlist'
     text_detected = pytesseract.image_to_string(Image.open(save_path),
     config=tesseract_config)
+
     try:
         assert filename.split('.')[0] == text_detected
-        #print(filename, '==', text_detected)
+        cntCorrect += 1
+        print(filename, '==', text_detected)
+
     except:
-        print(filename, '!=', text_detected)
+        cntWrong += 1
+        msgWrong += (filename + '!=' + text_detected) + "\n"
+
+print("")
+print("Correct:", str(cntCorrect))
+print("Wrong:"+str(cntWrong))
+print(msgWrong)
