@@ -3,3 +3,4 @@ converted_images/
 extracted_images/
 *.hdf5
 *.dat
+temp.*
