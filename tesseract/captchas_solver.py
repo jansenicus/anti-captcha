@@ -20,12 +20,12 @@ for (i, captcha_image_file) in enumerate(captcha_image_files):
     if not os.path.exists(os.path.dirname(save_path)):
         os.makedirs(os.path.dirname(save_path))
 
-    subprocess.call(['convert', captcha_image_file, '-colorspace', 'gray', save_path])
-    subprocess.call(['convert', save_path, '-colorspace', 'gray', '-threshold','50%', save_path])
+    # imagemagick convert command
+    subprocess.call(['convert', captcha_image_file, '-colorspace', 'gray', '-threshold','50%', save_path])
     subprocess.call(['convert', save_path, '-resize','200%', save_path])
 
-
-    tesseract_config = '--psm 8 --oem 0 -c tessedit_char_whitelist=abcdefghijklkmnopqrstuvwxyz1589 --user-words wordlist'
+    # tesseract call
+    tesseract_config = '--psm 8 --oem 0 -c tessedit_char_whitelist=abcdefghijklkmnopqrstuvwxyz01456789 --user-words wordlist'
     text_detected = pytesseract.image_to_string(Image.open(save_path),
     config=tesseract_config)
     try:

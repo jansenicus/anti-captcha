@@ -1,6 +1,6 @@
+apt install subprocess
 apt install imagemagick
 apt install tesseract-ocr
 apt install libtesseract-dev libleptonica-dev
-pip install tesserocr
 
 tesseract 4.0.0-beta.1
