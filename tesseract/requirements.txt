@@ -1,4 +1,4 @@
-apt install subprocess
+pip install pytesseract
 apt install imagemagick
 apt install tesseract-ocr
 apt install libtesseract-dev libleptonica-dev
