@@ -23,13 +23,13 @@ for (i, captcha_image_file) in enumerate(captcha_image_files):
         os.makedirs(os.path.dirname(save_path))
 
     # imagemagick convert command
-    subprocess.call(['convert', captcha_image_file, '-fuzz', '15%', '-fill', '#0000ff', '-opaque', '#1a67d9', save_path])
+    subprocess.call(['convert', captcha_image_file, '-fuzz', '22%', '-fill', '#0000ff', '-opaque', '#1a67d9', save_path])
     subprocess.call(['convert', save_path, '-fuzz', '55%', '-fill', '#ffffff', '+opaque', '#0000ff', save_path])
     #subprocess.call(['convert', save_path, '-colorspace', 'gray', '-threshold','60%', save_path])
     #subprocess.call(['convert', save_path, '-resize','200%', save_path])
 
     # tesseract call
-    tesseract_config = '--psm 8 --oem 0 -c tessedit_char_whitelist=ABCDEFIKLMNOPRSTKabcdefghiklkmnopqrstuvwxyz012345679 --user-words wordlist'
+    tesseract_config = '--psm 8 --oem 0 -c tessedit_char_whitelist=ABCDEFGIKLMNOPRSTWabcdefghiklkmnopqrstuvwxyz012345679 --user-words wordlist'
     text_detected = pytesseract.image_to_string(Image.open(save_path),
     config=tesseract_config)
 
