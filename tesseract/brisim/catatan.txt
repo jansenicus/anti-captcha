@@ -1,0 +1,14 @@
+https://mathieularose.com/decoding-captchas/
+TODO
+modeling
+
+tesseract
+-psm 6,7,8
+
+replace
+/usr/share/tesseract-ocr/4.00/tessdata/eng.traineddata
+with file downloaded from
+https://raw.githubusercontent.com/tesseract-ocr/tessdata/master/eng.traineddata
+
+ convert veg.png -fuzz 15% -fill "#601848" -opaque "#c03030" cveg.png
+ convert namafile.png -fuzz 15% -fill "#targetcolor" -opaque "#sourcecolor" outputfile
