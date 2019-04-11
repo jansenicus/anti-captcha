@@ -38,7 +38,9 @@ for (i, captcha_image_file) in enumerate(captcha_image_files):
     # REPLACE ALL SPACES
     text_detected = text_detected.replace(" ","")
 
-    # TEXT SUGGESTION
+    # TEXT SUGGESTION FROM WORDLIST
+    # this method improves accuracy
+    
     with open('wordlist') as f:
         content = f.readlines()
     wordlist = [x.strip() for x in content]
